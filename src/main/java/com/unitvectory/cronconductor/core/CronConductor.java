@@ -13,6 +13,12 @@
  */
 package com.unitvectory.cronconductor.core;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Set;
+import java.util.TimeZone;
+import java.util.TreeSet;
+
 /**
  * The CronConductor
  * 
@@ -20,4 +26,19 @@ package com.unitvectory.cronconductor.core;
  */
 public class CronConductor {
 
+    /**
+     * Set of all of the timezones supported by Java
+     */
+    private static final Set<String> ALL_TIMEZONES = Collections
+            .unmodifiableSet(new TreeSet<String>(Arrays.asList(TimeZone.getAvailableIDs())));
+
+    /**
+     * Tests if the specified timezone name is valid.
+     * 
+     * @param timezone the timezone
+     * @return true if valid; otherwise false
+     */
+    public static boolean isValidTimezone(String timezone) {
+        return ALL_TIMEZONES.contains(timezone);
+    }
 }

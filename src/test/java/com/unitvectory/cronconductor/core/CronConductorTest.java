@@ -13,7 +13,8 @@
  */
 package com.unitvectory.cronconductor.core;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -24,8 +25,8 @@ import org.junit.jupiter.api.Test;
 public class CronConductorTest {
 
     @Test
-    public void test() {
-        CronConductor cronConductor = new CronConductor();
-        assertNotNull(cronConductor);
+    public void isValidTimezoneTest() {
+        assertTrue(CronConductor.isValidTimezone("America/New_York"));
+        assertFalse(CronConductor.isValidTimezone("America/New_York/INVALID"));
     }
 }
