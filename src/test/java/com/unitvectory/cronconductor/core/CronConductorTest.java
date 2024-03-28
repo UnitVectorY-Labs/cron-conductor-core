@@ -13,6 +13,7 @@
  */
 package com.unitvectory.cronconductor.core;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
@@ -24,9 +25,28 @@ import org.junit.jupiter.api.Test;
  */
 public class CronConductorTest {
 
+    private static final CronConductor cronConductor = CronConductor.builder().build();
+
     @Test
     public void isValidTimezoneTest() {
         assertTrue(CronConductor.isValidTimezone("America/New_York"));
         assertFalse(CronConductor.isValidTimezone("America/New_York/INVALID"));
+    }
+
+    @Test
+    public void isValidCronExpressionTest() {
+        assertTrue(cronConductor.isValidCronExpression("0 17 * * 2"));
+        assertTrue(cronConductor.isValidCronExpression("@weekly"));
+        assertFalse(cronConductor.isValidCronExpression("invalid"));
+    }
+
+    @Test
+    public void getNextExecutionTimeTest() {
+        assertEquals("2024-04-02T17:00",
+                cronConductor.getNextExecutionTime("0 17 * * 2", "UTC", "2024-03-27T04:00"));
+        assertEquals("2024-04-09T17:00",
+                cronConductor.getNextExecutionTime("0 17 * * 2", "UTC", "2024-04-02T17:00"));
+        assertEquals("2025-01-01T00:00",
+                cronConductor.getNextExecutionTime("@yearly", "UTC", "2024-04-02T17:00"));
     }
 }
