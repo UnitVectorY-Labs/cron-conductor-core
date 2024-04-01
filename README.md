@@ -4,6 +4,12 @@
 
 Core Java library for cron-conductor providing the interfaces and main logic.
 
+## Getting Started
+
+This library requires Java 17.
+
+It is under development and is not feature complete.
+
 ## ScheduleEntry
 
 The `ScheduleEntry` object represents a single schedule within the CronConductor system. Each schedule is uniquely identified and can be either a recurring or a one-time event.
