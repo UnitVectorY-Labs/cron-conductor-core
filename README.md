@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/badge/License-EPL%202.0-blue.svg)](https://www.eclipse.org/legal/epl-v20.html) [![codecov](https://codecov.io/gh/UnitVectorY-Labs/cron-conductor-core/graph/badge.svg?token=FU94BLZKXP)](https://codecov.io/gh/UnitVectorY-Labs/cron-conductor-core)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Concept](https://img.shields.io/badge/Status-Concept-white)](https://unitvectory-labs.github.io/uvy-labs-guide/bestpractices/status.html#concept) [![codecov](https://codecov.io/gh/UnitVectorY-Labs/cron-conductor-core/graph/badge.svg?token=FU94BLZKXP)](https://codecov.io/gh/UnitVectorY-Labs/cron-conductor-core)
 
 # cron-conductor-core
 
