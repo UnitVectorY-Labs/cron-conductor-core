@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Concept](https://img.shields.io/badge/Status-Concept-white)](https://unitvectory-labs.github.io/uvy-labs-guide/bestpractices/status/#concept) [![codecov](https://codecov.io/gh/UnitVectorY-Labs/cron-conductor-core/graph/badge.svg?token=FU94BLZKXP)](https://codecov.io/gh/UnitVectorY-Labs/cron-conductor-core)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Concept](https://img.shields.io/badge/Status-Concept-white)](https://guide.unitvectorylabs.com/bestpractices/status/#concept) [![codecov](https://codecov.io/gh/UnitVectorY-Labs/cron-conductor-core/graph/badge.svg?token=FU94BLZKXP)](https://codecov.io/gh/UnitVectorY-Labs/cron-conductor-core)
 
 # cron-conductor-core
 
