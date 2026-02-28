@@ -59,7 +59,7 @@ public class CronConductor {
     private final CronParser cronParser;
 
     /**
-     * Creates a new instance of the CronCondutor class
+     * Creates a new instance of the CronConductor class
      * 
      * @param cronDefinition the cron definition
      */
@@ -80,9 +80,9 @@ public class CronConductor {
     }
 
     /**
-     * Tests if the provided cron expiression is valid
+     * Tests if the provided cron expression is valid
      * 
-     * @param cronExpression the cron expiression
+     * @param cronExpression the cron expression
      * @return true if valid; otherwise false
      */
     public boolean isValidCronExpression(@NonNull String cronExpression) {
