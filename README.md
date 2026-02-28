@@ -2,13 +2,43 @@
 
 # cron-conductor-core
 
-Core Java library for cron-conductor providing the interfaces and main logic.
+Modular Java library for high cardinality cron job scheduling with pluggable database and publisher backends.
 
 ## Getting Started
 
 This library requires Java 17.
 
 It is under development and is not feature complete.
+
+## Module Structure
+
+The project is organized as a multi-module Maven project:
+
+### common
+
+Core module containing shared models, interfaces, and cron logic.
+
+- **ScheduleEntry** - Data model representing a scheduled job
+- **ScheduleType** - Enum for schedule types (CRON, ONCE)
+- **CronConductor** - Cron expression validation and next execution time computation
+- **ScheduleRepository** - Interface for database persistence operations
+- **SchedulePublisher** - Interface for publishing schedule execution events
+
+### database-postgres
+
+PostgreSQL implementation of the `ScheduleRepository` interface using JDBC.
+
+### publisher-gcp-pubsub
+
+GCP Pub/Sub implementation of the `SchedulePublisher` interface for publishing schedule execution events as JSON messages.
+
+### api
+
+API component providing the `ScheduleService` for managing schedule entries. Supports creating, retrieving, listing, and deleting schedules. Validates inputs and computes next execution times for CRON type schedules.
+
+### runner
+
+Runner component providing the `ScheduleRunner` responsible for executing due cron jobs. Queries for due schedules, publishes execution events, updates CRON schedules with the next run time, and removes completed ONCE schedules.
 
 ## ScheduleEntry
 
